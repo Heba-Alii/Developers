@@ -3,31 +3,45 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/registerFragment">
-
+    app:startDestination="@id/homeFragment">
+    <action
+        android:id="@+id/action_to_registerFragment"
+        app:destination="@id/registerFragment"
+        app:launchSingleTop="true" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.developers.RegisterFragment"
+        android:name="com.example.developers.view.registration.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.developers.LoginFragment"
+        android:name="com.example.developers.view.registration.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.developers.HomeFragment"
+        android:name="com.example.developers.view.developers.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/allDeveloperFragment"
-        android:name="com.example.developers.AllDeveloperFragment"
+        android:name="com.example.developers.view.developers.AllDeveloperFragment"
         android:label="fragment_all_developer"
         tools:layout="@layout/fragment_all_developer" />
     <fragment
         android:id="@+id/addDeveloperFragment"
-        android:name="com.example.developers.AddDeveloperFragment"
+        android:name="com.example.developers.view.developers.AddDeveloperFragment"
         android:label="fragment_add_developer"
         tools:layout="@layout/fragment_add_developer" />
 </navigation>
