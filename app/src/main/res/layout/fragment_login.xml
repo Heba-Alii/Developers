@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/teal_700"
     android:orientation="vertical"
     tools:context=".view.registration.RegisterFragment">
 
@@ -27,7 +28,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textColor="@color/teal_700"
         android:layout_marginTop="50dp"
-
+        android:background="@drawable/custom_button"
         android:text="Login" />
 </LinearLayout>
