@@ -43,6 +43,8 @@ public class LoginFragment extends Fragment {
                 String pass = binding.pass.getText().toString();
                 if (dataIsValid(mail, pass)) {
                     fireBaseLogin(mail, pass);
+                }else {
+                    Toast.makeText(getActivity(), "Complete Your data", Toast.LENGTH_SHORT).show();
                 }
             }
         });
