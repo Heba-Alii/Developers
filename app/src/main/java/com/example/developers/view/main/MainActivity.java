@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if (firebaseAuth.getCurrentUser() == null) {
             NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
             NavController navController = navHostFragment.getNavController();
-           navController.navigate(R.id.registerFragment);
+            navController.navigate(R.id.registerFragment);
         }
     }
 }
