@@ -104,6 +104,42 @@
             app:layout_constraintTop_toBottomOf="@id/text_salary_hint" />
 
         <EditText
+            android:id="@+id/bonus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:hint="Bonus"
+            android:inputType="number"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/salary" />
+
+        <EditText
+            android:id="@+id/medical_insurance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:hint="Medical Insurance"
+            android:inputType="number"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bonus" />
+
+        <EditText
+            android:id="@+id/social_insurance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:hint="Social Insurance"
+            android:inputType="number"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/medical_insurance" />
+
+        <EditText
             android:id="@+id/vacation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -112,7 +148,7 @@
             android:hint="vacation"
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/salary" />
+            app:layout_constraintTop_toBottomOf="@id/social_insurance" />
 
         <EditText
             android:id="@+id/absence"
@@ -130,9 +166,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
+            android:layout_marginBottom="20dp"
             android:background="@color/teal_700"
             android:text="Add Developer"
             android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/absence" />

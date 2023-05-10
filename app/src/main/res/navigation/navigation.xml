@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_homeFragment_to_addDeveloperFragment"
             app:destination="@id/addDeveloperFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_allDeveloperFragment"
+            app:destination="@id/allDeveloperFragment" />
     </fragment>
     <fragment
         android:id="@+id/allDeveloperFragment"
