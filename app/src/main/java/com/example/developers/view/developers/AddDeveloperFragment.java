@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioGroup;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import com.example.developers.R;
 import com.example.developers.databinding.FragmentAddDeveloperBinding;
@@ -20,7 +21,7 @@ public class AddDeveloperFragment extends Fragment {
     FragmentAddDeveloperBinding binding;
     private String name = "", title = "";
     private double salary = 0.0, bonus = 0.0;
-    private int vacatio = 0, absence = 0, medicalIns = 0, socialIns = 0;
+    private int vacation = 0, absence = 0, medicalIns = 0, socialIns = 0;
 
 
     @Override
@@ -78,9 +79,28 @@ public class AddDeveloperFragment extends Fragment {
         binding.addDeveloperBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                name = binding.developerName.getText().toString();
+                absence = Integer.parseInt(binding.absence.getText().toString().isEmpty() ? "0" : binding.absence.getText().toString());
+                vacation = Integer.parseInt(binding.vacation.getText().toString().isEmpty() ? "0" : binding.vacation.getText().toString());
+                salary = Double.parseDouble(binding.salary.getText().toString().isEmpty() ? "0" : binding.salary.getText().toString());
+                bonus = Double.parseDouble(binding.bonus.getText().toString().isEmpty() ? "0" : binding.bonus.getText().toString());
+                medicalIns = Integer.parseInt(binding.medicalInsurance.getText().toString().isEmpty() ? "0" : binding.medicalInsurance.getText().toString());
+                socialIns = Integer.parseInt(binding.socialInsurance.getText().toString().isEmpty() ? "0" : binding.socialInsurance.getText().toString());
+                if (isDataValid()) {
+                    addDataToRoom();
+                } else {
+                    Toast.makeText(getActivity(), "Please Complete Your Data", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
+    }
+
+    private void addDataToRoom() {
+        Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
+    }
+
+    private boolean isDataValid() {
+        return !name.isEmpty() && !title.isEmpty() && !binding.salary.getText().toString().isEmpty();
     }
 }
