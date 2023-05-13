@@ -7,8 +7,8 @@ import androidx.room.OnConflictStrategy;
 import com.example.developers.model.pojo.DeveloperEntity;
 
 @Dao
-public interface DevelopersDao {
+public interface DeveloperDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void addDeveloper(DeveloperEntity developer);
-
 }
+
