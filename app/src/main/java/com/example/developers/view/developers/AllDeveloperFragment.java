@@ -37,7 +37,7 @@ public class AllDeveloperFragment extends Fragment implements DeleteDeveloper {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        title = getArguments().getString("title");
         getDeveloperByTitle(title);
     }
 
