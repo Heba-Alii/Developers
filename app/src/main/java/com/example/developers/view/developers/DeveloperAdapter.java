@@ -16,10 +16,12 @@ import com.example.developers.model.pojo.DeveloperEntity;
 import java.util.List;
 
 public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.ViewHolder> {
-    List<DeveloperEntity> developerList;
+    private List<DeveloperEntity> developerList;
+    private DeleteDeveloper deleteDeveloper;
 
-    public DeveloperAdapter(List<DeveloperEntity> developerList) {
+    public DeveloperAdapter(List<DeveloperEntity> developerList, DeleteDeveloper deleteDeveloper) {
         this.developerList = developerList;
+        this.deleteDeveloper = deleteDeveloper;
     }
 
     @NonNull
@@ -57,7 +59,11 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                deleteDeveloper.deleteDeveloperById(developer.getId());
+                //to refresh list after delete developer
+                developerList.remove(holder.getAdapterPosition());
+                notifyItemRemoved(holder.getAdapterPosition());
+                notifyItemRangeChanged(holder.getAdapterPosition(), developerList.size());
             }
         });
 
