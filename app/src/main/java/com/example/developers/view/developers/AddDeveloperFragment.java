@@ -14,7 +14,9 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.developers.R;
+import com.example.developers.controller.LocalBuilder;
 import com.example.developers.databinding.FragmentAddDeveloperBinding;
+import com.example.developers.model.pojo.DeveloperEntity;
 
 
 public class AddDeveloperFragment extends Fragment {
@@ -97,6 +99,14 @@ public class AddDeveloperFragment extends Fragment {
     }
 
     private void addDataToRoom() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                DeveloperEntity developer = new DeveloperEntity(name, title, salary, bonus, absence, vacation, medicalIns, socialIns);
+                LocalBuilder localBuilder = LocalBuilder.getInstance(getActivity());
+                localBuilder.developerDao().addDeveloper(developer);
+            }
+        }).start();
         Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
     }
 

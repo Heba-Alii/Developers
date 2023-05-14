@@ -16,8 +16,7 @@ public class DeveloperEntity {
     private int medicalInsurance;
     private int socialInsurance;
 
-    public DeveloperEntity(int id, String name, String title, double salary, double ponus, int absence, int vacation, int medicalInsurance, int socialInsurance) {
-        this.id = id;
+    public DeveloperEntity(String name, String title, double salary, double ponus, int absence, int vacation, int medicalInsurance, int socialInsurance) {
         this.name = name;
         this.title = title;
         this.salary = salary;

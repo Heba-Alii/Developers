@@ -17,6 +17,7 @@ import com.example.developers.databinding.FragmentHomeBinding;
 public class HomeFragment extends Fragment {
 
     FragmentHomeBinding binding;
+    Bundle bundle=new Bundle();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -33,7 +34,40 @@ public class HomeFragment extends Fragment {
         binding.addDeveloperBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_addDeveloperFragment);
+            }
+        });
+        binding.cardFresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bundle.putString("title","Fresh");
+
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+            }
+        });
+        binding.cardJunior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bundle.putString("title","Junior");
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+
+            }
+        });
+        binding.cardMid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bundle.putString("title","Mid");
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+
+            }
+        });
+        binding.cardSenior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bundle.putString("title","Senior");
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+
             }
         });
     }
