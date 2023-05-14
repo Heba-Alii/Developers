@@ -10,8 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.developers.R;
+import com.example.developers.controller.LocalBuilder;
+import com.example.developers.model.pojo.DeveloperEntity;
+
+import java.util.List;
 
 public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.ViewHolder> {
+    List<DeveloperEntity> developerList;
+
+    public DeveloperAdapter(List<DeveloperEntity> developerList) {
+        this.developerList = developerList;
+    }
+
     @NonNull
     @Override
     public DeveloperAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -21,12 +31,41 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull DeveloperAdapter.ViewHolder holder, int position) {
+        DeveloperEntity developer = developerList.get(position);
+        holder.dev_salary.setText(String.valueOf(developer.getSalary()));
+        holder.dev_name.setText(developer.getName());
+        holder.dev_title.setText(developer.getTitle());
+        switch (developer.getTitle()) {
+            case "Fresh": {
+                holder.dev_img.setImageResource(R.drawable.fresh);
+                break;
+            }
+            case "Junior": {
+                holder.dev_img.setImageResource(R.drawable.junior);
+                break;
+            }
+            case "Mid": {
+                holder.dev_img.setImageResource(R.drawable.mid);
+                break;
+            }
+            case "Senior": {
+                holder.dev_img.setImageResource(R.drawable.senior);
+                break;
+            }
+
+        }
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return developerList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -34,6 +73,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
         TextView dev_name;
         TextView dev_title;
         TextView dev_salary;
+        ImageView delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -41,6 +81,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
             dev_name = itemView.findViewById(R.id.dev_name);
             dev_title = itemView.findViewById(R.id.dev_title);
             dev_salary = itemView.findViewById(R.id.dev_salary);
+            delete = itemView.findViewById(R.id.delete_image);
         }
     }
 }
