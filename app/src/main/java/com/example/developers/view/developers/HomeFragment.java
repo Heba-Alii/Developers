@@ -13,11 +13,13 @@ import android.view.ViewGroup;
 
 import com.example.developers.R;
 import com.example.developers.databinding.FragmentHomeBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment extends Fragment {
 
     FragmentHomeBinding binding;
-    Bundle bundle=new Bundle();
+    Bundle bundle = new Bundle();
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -26,6 +28,7 @@ public class HomeFragment extends Fragment {
         View homeFragment = inflater.inflate(R.layout.fragment_home, container, false);
         binding = FragmentHomeBinding.bind(homeFragment);
         return binding.getRoot();
+
     }
 
     @Override
@@ -36,38 +39,46 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
 
                 Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_addDeveloperFragment);
+
             }
         });
         binding.cardFresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bundle.putString("title","Fresh");
+                bundle.putString("title", "Fresh");
 
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment, bundle);
             }
         });
         binding.cardJunior.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bundle.putString("title","Junior");
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+                bundle.putString("title", "Junior");
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment, bundle);
 
             }
         });
         binding.cardMid.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bundle.putString("title","Mid");
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+                bundle.putString("title", "Mid");
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment, bundle);
 
             }
         });
         binding.cardSenior.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bundle.putString("title","Senior");
-                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment,bundle);
+                bundle.putString("title", "Senior");
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_homeFragment_to_allDeveloperFragment, bundle);
 
+            }
+        });
+        binding.logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseAuth.signOut();
+                getActivity().finish();
             }
         });
     }
