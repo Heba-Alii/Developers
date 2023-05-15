@@ -43,9 +43,15 @@ public class LoginFragment extends Fragment {
                 String pass = binding.pass.getText().toString();
                 if (dataIsValid(mail, pass)) {
                     fireBaseLogin(mail, pass);
-                }else {
+                } else {
                     Toast.makeText(getActivity(), "Complete Your data", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        binding.createNewAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_registerFragment);
             }
         });
     }
@@ -56,7 +62,7 @@ public class LoginFragment extends Fragment {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_homeFragment);
-                    getActivity().finish();
+                   // getActivity().finish();
                 } else {
                     Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }

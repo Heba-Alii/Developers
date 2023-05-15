@@ -41,6 +41,7 @@ public class RegisterFragment extends Fragment {
                 String pass = binding.pass.getText().toString();
                 if (datavalid(mail, pass)) {
                     addToFireBase(mail, pass);
+
                 } else {
                     Toast.makeText(getActivity(), "Please Complete your data", Toast.LENGTH_SHORT).show();
                 }
@@ -52,6 +53,7 @@ public class RegisterFragment extends Fragment {
                 Navigation.findNavController(binding.getRoot())
                         .navigate(R.id.action_registerFragment_to_loginFragment);
 
+
             }
         });
     }
@@ -62,7 +64,7 @@ public class RegisterFragment extends Fragment {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Navigation.findNavController(binding.getRoot()).navigate(R.id.action_registerFragment_to_homeFragment);
-                    getActivity().finish();
+getActivity().finish();
                 } else {
                     Log.e("TAG", "onComplete: " + task.getException().getMessage());
                     Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
