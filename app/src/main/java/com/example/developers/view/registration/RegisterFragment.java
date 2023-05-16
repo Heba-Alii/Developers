@@ -64,7 +64,6 @@ public class RegisterFragment extends Fragment {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     Navigation.findNavController(binding.getRoot()).navigate(R.id.action_registerFragment_to_homeFragment);
-getActivity().finish();
                 } else {
                     Log.e("TAG", "onComplete: " + task.getException().getMessage());
                     Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
