@@ -42,8 +42,12 @@ public class LoginFragment extends Fragment {
                 String mail = binding.mail.getText().toString();
                 String pass = binding.pass.getText().toString();
                 if (dataIsValid(mail, pass)) {
+                    binding.loginProgress.setVisibility(View.VISIBLE);
+                    binding.login.setVisibility(View.VISIBLE);
                     fireBaseLogin(mail, pass);
                 } else {
+                    binding.loginProgress.setVisibility(View.GONE);
+                    binding.login.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "Complete Your data", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -61,8 +65,11 @@ public class LoginFragment extends Fragment {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
+
                     Navigation.findNavController(binding.getRoot()).navigate(R.id.action_loginFragment_to_homeFragment);
                 } else {
+                    binding.loginProgress.setVisibility(View.GONE);
+                    binding.login.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
