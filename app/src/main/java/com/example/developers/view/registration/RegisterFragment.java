@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +36,9 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        SpannableString login = new SpannableString("Log In");
+        login.setSpan(new UnderlineSpan(), 0, login.length(), 0);
+        binding.login.setText(login);
         binding.register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -41,10 +46,12 @@ public class RegisterFragment extends Fragment {
                 String pass = binding.pass.getText().toString();
                 if (datavalid(mail, pass)) {
                     binding.registerProgress.setVisibility(View.VISIBLE);
+                    binding.register.setVisibility(View.GONE);
                     addToFireBase(mail, pass);
 
                 } else {
                     binding.registerProgress.setVisibility(View.GONE);
+                    binding.register.setVisibility(View.VISIBLE);
                     Toast.makeText(getActivity(), "Please Complete your data", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -67,6 +74,8 @@ public class RegisterFragment extends Fragment {
                 if (task.isSuccessful()) {
                     Navigation.findNavController(binding.getRoot()).navigate(R.id.action_registerFragment_to_homeFragment);
                 } else {
+                    binding.registerProgress.setVisibility(View.GONE);
+                    binding.register.setVisibility(View.VISIBLE);
                     Log.e("TAG", "onComplete: " + task.getException().getMessage());
                     Toast.makeText(getActivity(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
