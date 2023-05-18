@@ -11,7 +11,7 @@ import com.example.developers.model.data.DeveloperDao;
 import com.example.developers.model.pojo.DeveloperEntity;
 import com.example.developers.view.developers.DeveloperAdapter;
 
-@Database(entities = DeveloperEntity.class, version = 1)
+@Database(entities = DeveloperEntity.class, version = 2)
 
 public abstract class LocalBuilder extends RoomDatabase {
     private static LocalBuilder dbInstance;

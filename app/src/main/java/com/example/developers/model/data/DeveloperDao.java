@@ -18,7 +18,9 @@ public interface DeveloperDao {
     @Query("delete from dev_table where id=:developerId")
     void deleteDeveloper(int developerId);
 
-    @Query("select * from dev_table where title= :developerTitle")
-    List<DeveloperEntity> getdeveloperByTitle(String developerTitle);
+    @Query("select * from dev_table where title= :developerTitle and uid= :userUid")
+    List<DeveloperEntity> getDeveloperByTitle(String developerTitle, String userUid);
+
+
 }
 

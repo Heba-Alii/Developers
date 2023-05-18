@@ -17,6 +17,7 @@ import com.example.developers.controller.LocalBuilder;
 import com.example.developers.databinding.FragmentAddDeveloperBinding;
 import com.example.developers.databinding.FragmentAllDeveloperBinding;
 import com.example.developers.model.pojo.DeveloperEntity;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -24,6 +25,8 @@ import java.util.List;
 public class AllDeveloperFragment extends Fragment implements DeleteDeveloper {
     FragmentAllDeveloperBinding binding;
     private String title;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    String uid = firebaseAuth.getCurrentUser().getUid();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -38,15 +41,16 @@ public class AllDeveloperFragment extends Fragment implements DeleteDeveloper {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         title = getArguments().getString("title");
-        getDeveloperByTitle(title);
+        getDeveloperByTitle(title, uid);
+
     }
 
-    private void getDeveloperByTitle(String title) {
+    private void getDeveloperByTitle(String title, String uid) {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 LocalBuilder localBuilder = LocalBuilder.getInstance(getActivity());
-                List<DeveloperEntity> developerEntityList = localBuilder.developerDao().getdeveloperByTitle(title);
+                List<DeveloperEntity> developerEntityList = localBuilder.developerDao().getDeveloperByTitle(title, uid);
                 DeveloperAdapter developerAdapter = new DeveloperAdapter(developerEntityList, AllDeveloperFragment.this);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
@@ -70,4 +74,5 @@ public class AllDeveloperFragment extends Fragment implements DeleteDeveloper {
         }).start();
         Toast.makeText(getContext(), "Developer Deleted Successfully", Toast.LENGTH_SHORT).show();
     }
+
 }

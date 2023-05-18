@@ -17,10 +17,14 @@ import com.example.developers.R;
 import com.example.developers.controller.LocalBuilder;
 import com.example.developers.databinding.FragmentAddDeveloperBinding;
 import com.example.developers.model.pojo.DeveloperEntity;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class AddDeveloperFragment extends Fragment {
     FragmentAddDeveloperBinding binding;
+    FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+    String uid = firebaseAuth.getCurrentUser().getUid();
+
     private String name = "", title = "";
     private double salary = 0.0, bonus = 0.0;
     private int vacation = 0, absence = 0, medicalIns = 0, socialIns = 0;
@@ -102,7 +106,7 @@ public class AddDeveloperFragment extends Fragment {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                DeveloperEntity developer = new DeveloperEntity(name, title, salary, bonus, absence, vacation, medicalIns, socialIns);
+                DeveloperEntity developer = new DeveloperEntity(uid, name, title, salary, bonus, absence, vacation, medicalIns, socialIns);
                 LocalBuilder localBuilder = LocalBuilder.getInstance(getActivity());
                 localBuilder.developerDao().addDeveloper(developer);
             }

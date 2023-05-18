@@ -3,10 +3,15 @@ package com.example.developers.model.pojo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 @Entity(tableName = "dev_table")
 public class DeveloperEntity {
+
+
     @PrimaryKey(autoGenerate = true)
     private int id;
+    private String uid;
     private String name;
     private String title;
     private double salary;
@@ -16,7 +21,8 @@ public class DeveloperEntity {
     private int medicalInsurance;
     private int socialInsurance;
 
-    public DeveloperEntity(String name, String title, double salary, double ponus, int absence, int vacation, int medicalInsurance, int socialInsurance) {
+    public DeveloperEntity(String uid, String name, String title, double salary, double ponus, int absence, int vacation, int medicalInsurance, int socialInsurance) {
+        this.uid = uid;
         this.name = name;
         this.title = title;
         this.salary = salary;
@@ -25,6 +31,14 @@ public class DeveloperEntity {
         this.vacation = vacation;
         this.medicalInsurance = medicalInsurance;
         this.socialInsurance = socialInsurance;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public int getId() {

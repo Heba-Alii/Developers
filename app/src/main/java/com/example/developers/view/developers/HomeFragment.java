@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.developers.R;
+import com.example.developers.controller.LocalBuilder;
 import com.example.developers.databinding.FragmentHomeBinding;
+import com.example.developers.model.pojo.DeveloperEntity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeFragment extends Fragment {
@@ -28,6 +30,7 @@ public class HomeFragment extends Fragment {
         View homeFragment = inflater.inflate(R.layout.fragment_home, container, false);
         binding = FragmentHomeBinding.bind(homeFragment);
         return binding.getRoot();
+
 
     }
 
@@ -82,4 +85,6 @@ public class HomeFragment extends Fragment {
             }
         });
     }
+
+
 }
