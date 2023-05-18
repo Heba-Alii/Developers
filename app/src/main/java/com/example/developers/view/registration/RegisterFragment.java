@@ -40,9 +40,11 @@ public class RegisterFragment extends Fragment {
                 String mail = binding.mail.getText().toString();
                 String pass = binding.pass.getText().toString();
                 if (datavalid(mail, pass)) {
+                    binding.registerProgress.setVisibility(View.VISIBLE);
                     addToFireBase(mail, pass);
 
                 } else {
+                    binding.registerProgress.setVisibility(View.GONE);
                     Toast.makeText(getActivity(), "Please Complete your data", Toast.LENGTH_SHORT).show();
                 }
             }
