@@ -1,4 +1,4 @@
-package com.example.developers.view.developers;
+package com.example.developers.view.home;
 
 import android.os.Bundle;
 
