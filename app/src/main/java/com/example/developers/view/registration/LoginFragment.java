@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +38,9 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        SpannableString register = new SpannableString("Register");
+        register.setSpan(new UnderlineSpan(), 0, register.length(), 0);
+        binding.createNewAccount.setText(register);
         binding.login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
