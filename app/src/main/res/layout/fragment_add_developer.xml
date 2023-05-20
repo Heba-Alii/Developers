@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Add New Developer"
+            android:text="@string/add_new_developer"
             android:textAlignment="center"
             android:textColor="@color/teal_700"
             android:textSize="30sp"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="30dp"
-            android:hint="Developer Name"
+            android:hint="@string/developer_name"
             android:inputType="text"
             android:textSize="17sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,28 +57,28 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Fresh" />
+                android:text="@string/fresh" />
 
             <RadioButton
                 android:id="@+id/junior"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Junior" />
+                android:text="@string/junior" />
 
             <RadioButton
                 android:id="@+id/mid"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mid" />
+                android:text="@string/mid" />
 
             <RadioButton
                 android:id="@+id/senior"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Senior" />
+                android:text="@string/senior" />
 
         </RadioGroup>
 
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:hint="Salary"
+            android:hint="@string/salary"
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/text_salary_hint" />
@@ -109,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:hint="Bonus"
+            android:hint="@string/bonus"
             android:inputType="number"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,7 +121,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:hint="Medical Insurance"
+            android:hint="@string/medical_insurance"
             android:inputType="number"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:hint="Social Insurance"
+            android:hint="@string/social_insurance"
             android:inputType="number"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:hint="vacation"
+            android:hint="@string/vacation"
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/social_insurance" />
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:hint="Absence"
+            android:hint="@string/absence"
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/vacation" />
@@ -168,7 +168,7 @@
             android:layout_margin="30dp"
             android:layout_marginBottom="20dp"
             android:background="@color/teal_700"
-            android:text="Add Developer"
+            android:text="@string/add_developer"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

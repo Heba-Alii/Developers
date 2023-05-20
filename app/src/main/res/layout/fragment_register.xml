@@ -33,14 +33,14 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="68dp"
             android:layout_marginEnd="30dp"
-            android:hint="E-mail" />
+            android:hint="@string/e_mail" />
 
         <EditText
             android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="30dp"
-            android:hint="Password" />
+            android:hint="@string/password" />
 
         <ProgressBar
             android:id="@+id/register_progress"
@@ -57,7 +57,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
-            android:text="Register"
+            android:text="@string/register"
             android:textColor="@color/teal_700"
             android:textStyle="bold" />
 
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20sp"
                 android:layout_marginTop="20dp"
-                android:text="Already have an account? "
+                android:text="@string/already_have_an_account"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Login"
+                android:text="@string/login"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
