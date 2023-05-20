@@ -44,7 +44,7 @@ public class RegisterFragment extends Fragment {
             public void onClick(View view) {
                 String mail = binding.mail.getText().toString();
                 String pass = binding.pass.getText().toString();
-                if (datavalid(mail, pass)) {
+                if (dataValid(mail, pass)) {
                     binding.registerProgress.setVisibility(View.VISIBLE);
                     binding.register.setVisibility(View.GONE);
                     addToFireBase(mail, pass);
@@ -81,7 +81,7 @@ public class RegisterFragment extends Fragment {
         });
     }
 
-    private boolean datavalid(String mail, String pass) {
+    private boolean dataValid(String mail, String pass) {
         return !mail.isEmpty() && !pass.isEmpty();
     }
 }

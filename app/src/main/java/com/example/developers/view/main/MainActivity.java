@@ -28,9 +28,6 @@ public class MainActivity extends AppCompatActivity {
             NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView);
             NavController navController = navHostFragment.getNavController();
             navController.navigate(R.id.action_to_registerFragment);
-
-
         }
-
     }
 }

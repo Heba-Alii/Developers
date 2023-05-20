@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 firebaseAuth.signOut();
-                               getActivity().finish();
+                                getActivity().finish();
                             }
                         })
                         .setNegativeButton("No", null)
