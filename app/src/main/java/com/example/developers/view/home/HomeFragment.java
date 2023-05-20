@@ -1,5 +1,7 @@
 package com.example.developers.view.home;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -16,6 +18,8 @@ import com.example.developers.controller.LocalBuilder;
 import com.example.developers.databinding.FragmentHomeBinding;
 import com.example.developers.model.pojo.DeveloperEntity;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
@@ -80,8 +84,21 @@ public class HomeFragment extends Fragment {
         binding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firebaseAuth.signOut();
-                getActivity().finish();
+                new AlertDialog.Builder(getActivity())
+                        .setTitle("Log out?")
+                        .setMessage("Are you sure you want to log out?")
+
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                firebaseAuth.signOut();
+                               getActivity().finish();
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .setIcon(R.drawable.baseline_add_alert_24).show();
+
+
             }
         });
     }

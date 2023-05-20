@@ -61,8 +61,6 @@ public class RegisterFragment extends Fragment {
             public void onClick(View view) {
                 Navigation.findNavController(binding.getRoot())
                         .navigate(R.id.action_registerFragment_to_loginFragment);
-
-
             }
         });
     }
