@@ -1,2 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="add_new_developer">إضافة موظف جديد</string>
+    <string name="developer_name">إسم الموظف</string>
+    <string name="fresh">حديث </string>
+    <string name="junior">مبتديء</string>
+    <string name="mid">متوسط</string>
+    <string name="senior">كبير</string>
+    <string name="salary">المرتب</string>
+    <string name="bonus">الزيادة</string>
+    <string name="medical_insurance">تأمينات طبية</string>
+    <string name="social_insurance">تامينات إجتماعية</string>
+    <string name="vacation">الأجازات</string>
+    <string name="absence">أيام الغياب</string>
+    <string name="add_developer">إضافة موظف</string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="e_mail">البريد الإلكتروني</string>
+    <string name="password">الرقم السري</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="i_don_t_have_an_account">ليس لدي حساب</string>
+    <string name="register">إنشاء حساب</string>
+    <string name="already_have_an_account">لدي حساب بالفعل</string>
+    <string name="complete">من فضلك أكمل البيانات</string>
+    <string name="fresh_salary">المرتب من 4000 إلى 7000</string>
+    <string name="junior_salary">المرتب من 7000إلى 10000</string>
+    <string name="mid_salary">المرتب من 10000 إلى 15000</string>
+    <string name="senior_salary">المرتب من 15000 إلى 20000</string>
+    <string name="success">تمت إضافة البيانات بنجاح</string>
+    <string name="delete">تم حذف الموظف</string>
+</resources>

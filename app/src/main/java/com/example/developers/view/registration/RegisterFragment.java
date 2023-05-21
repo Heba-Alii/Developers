@@ -36,7 +36,7 @@ public class RegisterFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SpannableString login = new SpannableString("Log In");
+        SpannableString login = new SpannableString(getString(R.string.login));
         login.setSpan(new UnderlineSpan(), 0, login.length(), 0);
         binding.login.setText(login);
         binding.register.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +52,7 @@ public class RegisterFragment extends Fragment {
                 } else {
                     binding.registerProgress.setVisibility(View.GONE);
                     binding.register.setVisibility(View.VISIBLE);
-                    Toast.makeText(getActivity(), "Please Complete your data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.complete, Toast.LENGTH_SHORT).show();
                 }
             }
         });

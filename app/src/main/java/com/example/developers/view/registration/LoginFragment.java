@@ -38,7 +38,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SpannableString register = new SpannableString("Register");
+        SpannableString register = new SpannableString(getString(R.string.register));
         register.setSpan(new UnderlineSpan(), 0, register.length(), 0);
         binding.createNewAccount.setText(register);
         binding.login.setOnClickListener(new View.OnClickListener() {
@@ -53,7 +53,7 @@ public class LoginFragment extends Fragment {
                 } else {
                     binding.loginProgress.setVisibility(View.GONE);
                     binding.login.setVisibility(View.VISIBLE);
-                    Toast.makeText(getActivity(), "Complete Your data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.complete, Toast.LENGTH_SHORT).show();
                 }
             }
         });

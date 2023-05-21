@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">Developers</string>
+    <string name="app_name" translatable="false">Developers</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_new_developer">Add New Developer</string>
     <string name="developer_name">Developer Name</string>
     <string name="fresh">Fresh</string>
@@ -22,4 +21,12 @@
     <string name="i_don_t_have_an_account">I don\'t have an account</string>
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="complete">Complete Your data</string>
+    <string name="fresh_salary">Salary from 4000 - 7000</string>
+    <string name="junior_salary">Salary from 7000 - 10000</string>
+    <string name="mid_salary">Salary from 10000 - 15000</string>
+    <string name="senior_salary">Salary from 15000 - 20000</string>
+    <string name="success">success</string>
+    <string name="delete">Developer Deleted Successfully</string>
+
 </resources>

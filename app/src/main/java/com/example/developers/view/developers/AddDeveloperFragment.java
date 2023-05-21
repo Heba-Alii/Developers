@@ -1,5 +1,7 @@
 package com.example.developers.view.developers;
 
+import static com.example.developers.R.string.success;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -48,7 +50,7 @@ public class AddDeveloperFragment extends Fragment {
                 switch (checkId) {
                     case R.id.fresh: {
                         title = "Fresh";
-                        binding.textSalaryHint.setText("Salary from 4000 - 7000");
+                        binding.textSalaryHint.setText(R.string.fresh_salary);
                         binding.medicalInsurance.setVisibility(View.GONE);
                         binding.socialInsurance.setVisibility(View.GONE);
                         binding.bonus.setVisibility(View.GONE);
@@ -56,7 +58,7 @@ public class AddDeveloperFragment extends Fragment {
                     }
                     case R.id.junior: {
                         title = "Junior";
-                        binding.textSalaryHint.setText("Salary from 7000 - 10000");
+                        binding.textSalaryHint.setText(R.string.junior_salary);
                         binding.medicalInsurance.setVisibility(View.GONE);
                         binding.socialInsurance.setVisibility(View.GONE);
                         binding.bonus.setVisibility(View.VISIBLE);
@@ -65,7 +67,7 @@ public class AddDeveloperFragment extends Fragment {
                     }
                     case R.id.mid: {
                         title = "Mid";
-                        binding.textSalaryHint.setText("Salary from 10000 - 15000");
+                        binding.textSalaryHint.setText(R.string.mid_salary);
                         binding.medicalInsurance.setVisibility(View.VISIBLE);
                         binding.socialInsurance.setVisibility(View.GONE);
                         binding.bonus.setVisibility(View.VISIBLE);
@@ -73,7 +75,7 @@ public class AddDeveloperFragment extends Fragment {
                     }
                     case R.id.senior: {
                         title = "Senior";
-                        binding.textSalaryHint.setText("Salary from 15000 - 20000");
+                        binding.textSalaryHint.setText(R.string.senior_salary);
                         binding.medicalInsurance.setVisibility(View.VISIBLE);
                         binding.socialInsurance.setVisibility(View.VISIBLE);
                         binding.bonus.setVisibility(View.VISIBLE);
@@ -95,7 +97,7 @@ public class AddDeveloperFragment extends Fragment {
                 if (isDataValid()) {
                     addDataToRoom();
                 } else {
-                    Toast.makeText(getActivity(), "Please Complete Your Data", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), R.string.complete, Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -111,7 +113,7 @@ public class AddDeveloperFragment extends Fragment {
                 localBuilder.developerDao().addDeveloper(developer);
             }
         }).start();
-        Toast.makeText(getActivity(), "success", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), success, Toast.LENGTH_SHORT).show();
     }
 
     private boolean isDataValid() {

@@ -1,5 +1,7 @@
 package com.example.developers.view.developers;
 
+import static com.example.developers.R.string.delete;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -72,7 +74,7 @@ public class AllDeveloperFragment extends Fragment implements DeleteDeveloper {
                 localBuilder.developerDao().deleteDeveloper(developerId);
             }
         }).start();
-        Toast.makeText(getContext(), "Developer Deleted Successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(), delete, Toast.LENGTH_SHORT).show();
     }
 
 }

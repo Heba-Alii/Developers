@@ -19,6 +19,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
     private List<DeveloperEntity> developerList;
     private DeleteDeveloper deleteDeveloper;
 
+
     public DeveloperAdapter(List<DeveloperEntity> developerList, DeleteDeveloper deleteDeveloper) {
         this.developerList = developerList;
         this.deleteDeveloper = deleteDeveloper;
