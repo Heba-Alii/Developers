@@ -1,5 +1,6 @@
 package com.example.developers.view.developers;
 
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.developers.R;
@@ -60,11 +62,23 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                deleteDeveloper.deleteDeveloperById(developer.getId());
-                //to refresh list after delete developer
-                developerList.remove(holder.getAdapterPosition());
-                notifyItemRemoved(holder.getAdapterPosition());
-                notifyItemRangeChanged(holder.getAdapterPosition(), developerList.size());
+                new AlertDialog.Builder(holder.itemView.getContext())
+                        .setTitle("Delete Developer")
+                        .setMessage("Are you want to delete this developer?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                deleteDeveloper.deleteDeveloperById(developer.getId());
+                                //to refresh list after delete developer
+                                developerList.remove(holder.getAdapterPosition());
+                                notifyItemRemoved(holder.getAdapterPosition());
+                                notifyItemRangeChanged(holder.getAdapterPosition(), developerList.size());
+                            }
+                        })
+                        .setNegativeButton("No", null)
+                        .setIcon(R.drawable.baseline_add_alert_24)
+                        .show();
+
             }
         });
 
