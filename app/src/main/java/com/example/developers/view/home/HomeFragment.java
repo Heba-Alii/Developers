@@ -34,8 +34,6 @@ public class HomeFragment extends Fragment {
         View homeFragment = inflater.inflate(R.layout.fragment_home, container, false);
         binding = FragmentHomeBinding.bind(homeFragment);
         return binding.getRoot();
-
-
     }
 
     @Override
@@ -97,11 +95,7 @@ public class HomeFragment extends Fragment {
                         })
                         .setNegativeButton("No", null)
                         .setIcon(R.drawable.baseline_add_alert_24).show();
-
-
             }
         });
     }
-
-
 }

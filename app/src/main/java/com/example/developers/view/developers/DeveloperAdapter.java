@@ -78,10 +78,8 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
                         .setNegativeButton("No", null)
                         .setIcon(R.drawable.baseline_add_alert_24)
                         .show();
-
             }
         });
-
     }
 
     @Override
