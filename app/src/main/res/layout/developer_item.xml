@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/developer_card_view"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="wrap_content"
     app:cardCornerRadius="20dp"
     app:cardElevation="8dp"
     app:cardUseCompatPadding="true">
@@ -24,13 +24,15 @@
 
         <TextView
             android:id="@+id/dev_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/delete_image"
             app:layout_constraintStart_toEndOf="@id/dev_img"
-            app:layout_constraintTop_toTopOf="@id/dev_img" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/dev_title"
@@ -61,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="20dp"
-            android:padding="20dp"
+            android:padding="10dp"
             android:src="@drawable/baseline_delete_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
