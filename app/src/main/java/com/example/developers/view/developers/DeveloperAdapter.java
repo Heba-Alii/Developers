@@ -45,6 +45,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
                 holder.dev_img.setImageResource(R.drawable.fresh);
                 break;
             }
+
             case "Junior": {
                 holder.dev_img.setImageResource(R.drawable.junior);
                 break;

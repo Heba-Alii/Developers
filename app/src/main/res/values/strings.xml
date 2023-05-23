@@ -28,5 +28,6 @@
     <string name="senior_salary">Salary from 15000 - 20000</string>
     <string name="success">success</string>
     <string name="delete">Developer Deleted Successfully</string>
+    <string name="fr">Fresh</string>
 
 </resources>
