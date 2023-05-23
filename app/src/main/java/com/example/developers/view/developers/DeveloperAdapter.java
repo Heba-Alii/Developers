@@ -43,19 +43,23 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
         switch (developer.getTitle()) {
             case "Fresh": {
                 holder.dev_img.setImageResource(R.drawable.fresh);
+                holder.dev_title.setText(R.string.fresh);
                 break;
             }
 
             case "Junior": {
                 holder.dev_img.setImageResource(R.drawable.junior);
+                holder.dev_title.setText(R.string.junior);
                 break;
             }
             case "Mid": {
                 holder.dev_img.setImageResource(R.drawable.mid);
+                holder.dev_title.setText(R.string.mid);
                 break;
             }
             case "Senior": {
                 holder.dev_img.setImageResource(R.drawable.senior);
+                holder.dev_title.setText(R.string.senior);
                 break;
             }
 
